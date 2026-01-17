@@ -1,3 +1,9 @@
+// LeetCode: Container With Most Water
+// Pattern: Two Pointers
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+// Key Insight: Area is limited by the shorter height, so always move the smaller pointer.
+
 public int maxarea(int[] height)
 {
     int left=0;
