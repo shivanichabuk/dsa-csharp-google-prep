@@ -1,0 +1,20 @@
+LC724_FindPivotIndex.cs// LC724 - Find Pivot Index
+// Pattern: Prefix Sum
+// Time: O(n) | Space: O(1)
+// Approach: leftSum + nums[i] + rightSum = total
+//           pivot when leftSum == total - leftSum - nums[i]
+
+public class Solution {
+    public int PivotIndex(int[] nums) {
+        int total = 0;
+        foreach (int n in nums) total += n;
+
+        int leftSum = 0;
+        for (int i = 0; i < nums.Length; i++) {
+            if (leftSum == total - leftSum - nums[i])
+                return i;
+            leftSum += nums[i];
+        }
+        return -1;
+    }
+}
